@@ -1,49 +1,111 @@
-/*
-This is a comment block. It won't be read as an Ink story.
-Comments are very useful for leaving ideas for story and functionalty
-
-This exercise will demonstrate the following in the example video:
- - Variable types: integer, float, boolean
- - Variable assignment
- - Printing variables
- - Variable checking
- 
- In the assignment:
- - Add four more knots
- - Assign at least TWO new variables through player choices
- - Print at least one of the variables to the player in a passage
- - Check the value of a variable and have it do something
-*/
+VAR hunger = 50
+VAR child_name = ""
 
 
 
--> cave_mouth
-
-== cave_mouth ==
-You are at the enterance to a cave. {not torch_pickup:There is a torch on the floor.} The cave extends to the east and west.
 
 
+-> memory
 
-+ [Take the east tunnel] -> east_tunnel
-+ [Take the west tunnel] -> west_tunnel
-* [Pick up the torch] -> torch_pickup
 
-== east_tunnel ==
-You are in the east tunnel. It is very dark, you can't see anything.
-* {torch_pickup} [Light Torch] -> east_tunnel_lit
-+ [Go Back] -> cave_mouth
--> END
+== memory ==
+You had woken up in the dead of night and had finally escaped that hell you called a home.  Along with you, is your 'sister' or rather the girl that was kiddnaped alongside perhaps a week after you were. You keep replaying the name they gave her, but only remember the name you witness on the news. It was faint, but it trails in your mind.
 
-== west_tunnel ==
-You are in the west
-+ [Go Back] -> cave_mouth
--> END
 
-=== torch_pickup ===
-You now have a torch. May it light the way.
-* [Go Back] -> cave_mouth
--> END
+*[Aria] 
+ ~ child_name = "Aria" 
+-> middle_forest
+*[Cathrine] 
+ ~ child_name = "Cathrine"  
+-> middle_forest
+*[Maddie] 
+ ~ child_name = "Maddie"  
+-> middle_forest
 
-== east_tunnel_lit ==
-The light of your torch glints off of the thousands of coins in the room.
+
+
+
+
+== middle_forest ==
+You are traveling in the forest. Your legs are sore, but you still manage to keep going.
+You and {child_name} have been walking for what seems like weeks now, but you had only just left the house on this night.
+
+You both have {health}. {child_name} has {health}.
+
+
+
+
+
+
+
+
++[Go North] -> north
++[Go East] -> east
++[Go West] -> west
++[Go Back] -> return
+
+
+
+
+
+
+
+
+== north ==
+you and {child_name } continue through the forest on your set path. Throught the foggy mist. You come across a creek of fresh spring water. As you and {child_name} catch your breath and gain your senses, you notice a berry bush. You don't know what kind they are but you hunger is too great too care. 
+*[Eat the berries] -> eat_berries
++[Avoid and continue north] -> go_north
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+== go_north ==
+You continue north, trustng instict and not eating the suspicious berries. you feel a senses that you made the rigth choice, but it is quickly over-shadowed by you { ~ hunger. }
+
+
+
+
+
+
+
+== eat_berries ==
+you and {child_name} eat the berries and feel life flow into your body, only to slowly feel it pulled away from you in a instant, for you relize these berries are not for human comsuption. Your journey ends here, for this is you fate.
+->END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -> END
