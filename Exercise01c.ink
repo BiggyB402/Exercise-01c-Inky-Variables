@@ -1,4 +1,4 @@
-VAR hunger = 50
+VAR health = 50
 VAR child_name = ""
 
 
@@ -10,6 +10,7 @@ VAR child_name = ""
 
 == memory ==
 You had woken up in the dead of night and had finally escaped that hell you called a home.  Along with you, is your 'sister' or rather the girl that was kiddnaped alongside perhaps a week after you were. You keep replaying the name they gave her, but only remember the name you witness on the news. It was faint, but it trails in your mind.
+
 
 
 *[Aria] 
@@ -27,10 +28,9 @@ You had woken up in the dead of night and had finally escaped that hell you call
 
 
 == middle_forest ==
-You are traveling in the forest. Your legs are sore, but you still manage to keep going.
+You are traveling in the forest. Your legs are sore, and you feel your health decline but you still manage to keep going.
 You and {child_name} have been walking for what seems like weeks now, but you had only just left the house on this night.
 
-You both have {health}. {child_name} has {health}.
 
 
 
@@ -39,10 +39,9 @@ You both have {health}. {child_name} has {health}.
 
 
 
-+[Go North] -> north
-+[Go East] -> east
-+[Go West] -> west
-+[Go Back] -> return
+
+*[Go North] -> north
+*[Go Back] -> turn_back
 
 
 
@@ -53,8 +52,9 @@ You both have {health}. {child_name} has {health}.
 
 == north ==
 you and {child_name } continue through the forest on your set path. Throught the foggy mist. You come across a creek of fresh spring water. As you and {child_name} catch your breath and gain your senses, you notice a berry bush. You don't know what kind they are but you hunger is too great too care. 
-*[Eat the berries] -> eat_berries
-+[Avoid and continue north] -> go_north
+*[Eat the Berries] -> eat_berries
++[Avoid and Continue North] -> go_north
+* [Go Back] -> turn_back
 
 
 
@@ -76,7 +76,29 @@ you and {child_name } continue through the forest on your set path. Throught the
 
 
 == go_north ==
-You continue north, trustng instict and not eating the suspicious berries. you feel a senses that you made the rigth choice, but it is quickly over-shadowed by you { ~ hunger. }
+You continue north, trustng instict and not eating the suspicious berries. you feel a senses that you made the rigth choice, but it is quickly over-shadowed by your hunger.
+*[Go North] -> north
+*[Go Back] -> turn_back
+-> END
+
+
+
+
+== turn_back  ==
+You go back realizing this is a fruitless effort. Upon coming "home" you and {child_name} are taken farther away, never to be seen or heard again. This is the end of your journey, and your fate.
+-> END
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -108,4 +130,3 @@ you and {child_name} eat the berries and feel life flow into your body, only to 
 
 
 
--> END
